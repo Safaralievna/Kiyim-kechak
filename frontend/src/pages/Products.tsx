@@ -191,7 +191,7 @@ export const Products: React.FC = () => {
       <div className="flex flex-col gap-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Mahsulotlar</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Retake</h1>
             <p className="text-[--muted-foreground] mt-1">Inventar va mahsulotlar boshqaruvi</p>
           </div>
           <div className="flex items-center gap-3">
