@@ -21,7 +21,6 @@ steps:
       username: ${{ secrets.SERVER_USER }}
       key: ${{ secrets.SSH_PRIVATE_KEY }}
       script: |
-        # Loyihani yangilash
         if [ ! -d "/root/Kiyim-kechak" ]; then
           git clone https://github.com/${{ github.repository }}.git /root/Kiyim-kechak
         fi
@@ -31,9 +30,7 @@ steps:
         git fetch --all
         git reset --hard origin/main
 
-        ####################################
         # BACKEND
-        ####################################
         cd backend
 
         npm install
@@ -42,9 +39,7 @@ steps:
 
         cd ..
 
-        ####################################
         # FRONTEND
-        ####################################
         cd frontend
 
         npm install
@@ -56,9 +51,6 @@ steps:
 
         cd ..
 
-        ####################################
-        # SAVE PM2
-        ####################################
         pm2 save
         pm2 status
 ```
