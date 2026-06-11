@@ -113,7 +113,7 @@ export const Login: React.FC = () => {
             <div className="space-y-5">
               <div className="relative group">
                 <Input 
-                  label="Elektron pochta test"
+                  label="Elektron pochta"
                   type="email" 
                   placeholder="name@company.uz"
                   error={errors.email?.message}
