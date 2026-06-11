@@ -78,7 +78,7 @@ export const Dashboard: React.FC = () => {
 
   const cards = [
     { 
-      title: 'Jami buyurtmalar', 
+      title: 'Jami buyurtmalar test', 
       value: stats.ordersCount, 
       trend: '+12%',
       icon: ShoppingCart,
