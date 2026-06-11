@@ -20,4 +20,21 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            echo "Deploy started"
+            cd /root/Kiyim-kechak
+
+            git fetch --all
+            git reset --hard origin/main
+
+            cd backend
+            npm install
+            pm2 restart Kiyim-kechak-backend || pm2 start npm --name "Kiyim-kechak-backend" -- run dev
+
+            cd ../frontend
+            npm install
+            npm run build
+
+            pm2 delete Kiyim-kechak-frontend || true
+            pm2 serve dist 3000 --name Kiyim-kechak-frontend --spa
+
+            pm2 save
+            pm2 status
