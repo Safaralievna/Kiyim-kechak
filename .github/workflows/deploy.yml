@@ -23,10 +23,6 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             source "$NVM_DIR/nvm.sh"
 
-            node -v
-            npm -v
-            pm2 -v
-
             cd /root/Kiyim-kechak
             git fetch --all
             git reset --hard origin/main
