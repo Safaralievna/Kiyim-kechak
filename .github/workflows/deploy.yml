@@ -20,8 +20,14 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /root/Kiyim-kechak
+            export NVM_DIR="$HOME/.nvm"
+            source "$NVM_DIR/nvm.sh"
 
+            node -v
+            npm -v
+            pm2 -v
+
+            cd /root/Kiyim-kechak
             git fetch --all
             git reset --hard origin/main
 
@@ -37,4 +43,3 @@ jobs:
             pm2 serve dist 3000 --name Kiyim-kechak-frontend --spa
 
             pm2 save
-            pm2 status
